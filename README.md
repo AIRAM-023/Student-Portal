@@ -1,4 +1,4 @@
-# 👋 Hello, I'm Maria Habib
+#  Hello, I'm Maria Habib
 
 ## 🎓 About Me
 I'm a 6th semester BSIT student at Punjab University College of Information Technology (PUCIT), passionate about web development and artificial intelligence.
