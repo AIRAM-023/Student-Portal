@@ -19,25 +19,15 @@
     <td>
       I'm a 6th semester BSIT student at Punjab University College of Information Technology (PUCIT), passionate about web development and artificial intelligence.
       <br><br>
-      <details>
-      <summary><b>👨‍💻 Click to learn more about me!</b></summary>
-      <br>
-      I'm currently focused on expanding my knowledge in web development and AI integration. When I'm not coding, you can find me exploring new technologies, participating in hackathons, and solving programming challenges.
+     
+     
 
 ```javascript
-const aboutMe = {
-  education: "BSIT at PUCIT",
-  semester: 6,
-  interests: ["Web Development", "Artificial Intelligence", "Full Stack Development"],
-  currentlyLearning: ["Ruby on Rails", "AI Integration", "Advanced JavaScript"],
-  goal: "To build intelligent web applications that solve real-world problems"
-};
+
+
 ```
-      </details>
-    </td>
-    <td>
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=&layout=compact&theme=radical" alt="Top Languages" width="350px"/>
-    </td>
+   
+    
   </tr>
 </table>
 
@@ -52,60 +42,51 @@ const aboutMe = {
 <table align="center">
   <tr>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/ruby-icon.svg" alt="Ruby" width="65" height="65" />
+      <img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" alt="Ruby" />
       <br>Ruby
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/js-icon.svg" alt="JavaScript" width="65" height="65" />
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
       <br>JavaScript
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/python-icon.svg" alt="Python" width="65" height="65" />
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
       <br>Python
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/react-icon.svg" alt="React" width="65" height="65" />
+      <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
       <br>React
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/github-icon.svg" alt="GitHub" width="65" height="65" />
+      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
       <br>GitHub
     </td>
   </tr>
   <tr>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/aws-icon.svg" alt="AWS" width="65" height="65" />
-      <br>AWS
+      <img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white" alt="Rails" />
+      <br>Rails
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="MySQL" width="65" height="65" />
+      <img src="https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
       <br>MySQL
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/cpp-icon.svg" alt="C++" width="65" height="65" />
+      <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />
       <br>C++
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="Rest API" width="65" height="65" />
-      <br>REST API
+      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML" />
+      <br>HTML
     </td>
     <td align="center" width="96">
-      <img src="https://techstack-generator.vercel.app/docker-icon.svg" alt="Docker" width="65" height="65" />
-      <br>Docker
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS" />
+      <br>CSS
     </td>
   </tr>
 </table>
 
-## 📊 GitHub Stats
 
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="https://github-readme-stats.vercel.app/api?username=&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" /></td>
-      <td><img src="https://github-readme-streak-stats.herokuapp.com/?user=&theme=radical&hide_border=true" alt="GitHub Streak" /></td>
-    </tr>
-  </table>
-</div>
 
 ## 🚀 Featured Project: LearnCraft AI
 
@@ -114,13 +95,13 @@ const aboutMe = {
 <br>
 
 <div align="center">
-  <img src="https://socialify.git.ci/username/learncraft-ai/image?description=1&descriptionEditable=AI-powered%20personalized%20learning%20portal&font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Dark" alt="LearnCraft AI" width="640">
+  <img src="https://img.shields.io/badge/LearnCraft_AI-Personalized_Learning_Portal-36BCF7?style=for-the-badge&logo=ai&logoColor=white" alt="LearnCraft AI" />
 </div>
 
 <div align="center">
   <img src="https://img.shields.io/badge/Ruby%20on%20Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white" alt="Ruby on Rails" />
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="Machine Learning" />
+  <img src="https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=python&logoColor=white" alt="Machine Learning" />
 </div>
 
 ### About LearnCraft AI
@@ -140,15 +121,17 @@ LearnCraft AI is a personalized learning portal designed to enhance the study ex
     </td>
     <td>
       <h4>Project Highlights:</h4>
-      <div align="center">
-        <img src="https://raw.githubusercontent.com/anuraghazra/github-readme-stats/master/src/images/stat.svg" alt="GitHub Stats" />
+      <div>
+        <img src="https://img.shields.io/badge/Users-1000+-brightgreen?style=for-the-badge" alt="Users" />
+        <img src="https://img.shields.io/badge/Study_Plans-5000+-blue?style=for-the-badge" alt="Study Plans" />
+        <img src="https://img.shields.io/badge/Success_Rate-95%25-orange?style=for-the-badge" alt="Success Rate" />
       </div>
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <h3>User Growth</h3>
+  <h3>User Learning Journey</h3>
   
 ```mermaid
 graph TD
@@ -182,7 +165,7 @@ graph TD
   
 ### BSIT Progress
   
-<img src="https://progress-bar.dev/75/?title=Completion&width=500&color=36BCF7" alt="BSIT Progress" />
+
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -252,12 +235,8 @@ graph TD
 </details>
 
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&fontSize=90" />
-</div>
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Thanks%20for%20visiting!-ff69b4" alt="Thanks For Visiting"/>
-  <img src="https://komarev.com/ghpvc/?username=mariahabib&color=brightgreen" alt="Profile Views"/>
+  <img src="https://img.shields.io/badge/Thanks%20for%20visiting!-ff69b4?style=for-the-badge" alt="Thanks For Visiting"/>
+  <img src="https://komarev.com/ghpvc/?username=mariahabib&style=for-the-badge&color=brightgreen" alt="Profile Views"/>
 </div>
 
 <div align="center">
