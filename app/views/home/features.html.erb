@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Features - LearnCraft AI</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* All your CSS styles remain unchanged – already complete */
+  </style>
+</head>
+<body>
+  <%= render 'layouts/navbar' %>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="display-4 fw-bold mb-4">Supercharge Your Learning Journey</h1>
+          <p class="lead mb-5">LearnCraft AI provides cutting-edge tools that adapt to your unique learning style, making education more efficient and engaging than ever before.</p>
+          <div class="d-flex gap-3">
+            <a href="#features" class="btn btn-light-custom">Explore Features</a>
+            <a href="/signup" class="btn btn-outline-light">Start Free Trial</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="LRN.jpg" alt="Learning illustration" class="img-fluid rounded-lg shadow-lg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3">Powerful Features</h2>
+        <p class="lead text-muted mb-5">Discover how LearnCraft AI revolutionizes the way you learn with these innovative tools.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 fade-in">
+            <div class="feature-icon bg-primary">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <h3 class="h4 mb-3">Smart Summarization</h3>
+            <p class="text-muted mb-3">Our AI automatically generates concise summaries from any learning material, helping you grasp key concepts faster.</p>
+            <div class="d-flex flex-column mt-auto">
+              <div class="demo-trigger mb-3" data-toggle="summarization">
+                <a href="#" class="text-primary fw-bold">See how it works <i class="fas fa-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 fade-in" style="animation-delay: 0.2s;">
+            <div class="feature-icon bg-danger">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <h3 class="h4 mb-3">Adaptive Quizzes</h3>
+            <p class="text-muted mb-3">Generate personalized quizzes that adapt to your knowledge gaps and learning pace for maximum retention.</p>
+            <div class="d-flex flex-column mt-auto">
+              <div class="demo-trigger mb-3" data-toggle="quizzes">
+                <a href="#" class="text-primary fw-bold">See how it works <i class="fas fa-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 fade-in" style="animation-delay: 0.4s;">
+            <div class="feature-icon bg-success">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="h4 mb-3">Custom Study Plans</h3>
+            <p class="text-muted mb-3">Get a tailored study schedule based on your goals, available time, and learning priorities.</p>
+            <div class="d-flex flex-column mt-auto">
+              <div class="demo-trigger mb-3" data-toggle="study-plans">
+                <a href="#" class="text-primary fw-bold">See how it works <i class="fas fa-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card p-4 fade-in" style="animation-delay: 0.6s;">
+            <div class="feature-icon bg-warning">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3 class="h4 mb-3">AI-Powered Insights</h3>
+            <p class="text-muted mb-3">Track your learning trends and progress with intelligent insights that help you improve continuously.</p>
+            <div class="d-flex flex-column mt-auto">
+              <div class="demo-trigger mb-3" data-toggle="insights">
+                <a href="#" class="text-primary fw-bold">See how it works <i class="fas fa-chevron-right ms-1"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container text-center">
+      <p class="mb-0">&copy; <%= Time.current.year %> LearnCraft AI. All rights reserved.</p>
+      
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

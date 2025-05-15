@@ -1,0 +1,56 @@
+<!-- app/views/documents/show.html.erb -->
+<h1>Document Summary</h1>
+
+<!-- Debug Information (remove in production) -->
+<% if Rails.env.development? %>
+  <div class="debug-info" style="background-color: #f8f9fa; padding: 10px; margin-bottom: 20px; border: 1px solid #ddd;">
+    <h4>Debug Information</h4>
+    <ul>
+      <li>Document ID: <%= @document.id %></li>
+      <li>Content Present: <%= @document.content.present? ? "YES" : "NO" %></li>
+      <li>Content Type: <%= @document.content.class.name %></li>
+      <li>Content Length: <%= @document.content.to_s.length %> characters</li>
+      <li>File Attached: <%= @document.file.attached? ? "YES" : "NO" %></li>
+      <% if @document.file.attached? %>
+        <li>File Name: <%= @document.file.filename %></li>
+        <li>Content Type: <%= @document.file.content_type %></li>
+      <% end %>
+      <li>Content Preview (first 100 chars): <pre><%= @document.content.to_s[0..100] %>...</pre></li>
+    </ul>
+  </div>
+<% end %>
+
+<div class="document-summary">
+  <% if @document.content.present? %>
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h3>Generated Summary</h3>
+        <div class="download-options">
+          <%= link_to "Download as TXT", download_summary_document_path(@document, format: :txt), class: "btn btn-sm btn-outline-primary" %>
+          <%= link_to "Download as DOCX", download_summary_document_path(@document, format: :docx), class: "btn btn-sm btn-outline-primary" %>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="summary-content">
+          <%= simple_format(@document.content) %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="alert alert-warning">
+      <strong>No summary is available for this document.</strong>
+      <p>This could be due to one of the following reasons:</p>
+      <ol>
+        <li>The document contains no extractable text</li>
+        <li>There was an error during text extraction</li>
+        <li>The API for summarization is not available</li>
+        <li>The content was not saved properly to the database</li>
+      </ol>
+      <p>Check the application logs for more details.</p>
+    </div>
+  <% end %>
+</div>
+
+<div class="mt-4">
+  <%= link_to "Upload Another Document", new_document_path, class: "btn btn-primary" %>
+</div>

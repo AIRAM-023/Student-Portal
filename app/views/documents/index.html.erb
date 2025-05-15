@@ -1,0 +1,8 @@
+<h1>All Documents</h1>
+
+<% @documents.each do |document| %>
+  <p>
+    <strong>Document ID:</strong> <%= document.id %><br>
+    <%= link_to "View", document_path(document) %>
+  </p>
+<% end %>

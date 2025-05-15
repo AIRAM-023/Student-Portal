@@ -1,0 +1,12 @@
+<h1>Chat with GPT</h1>
+
+<%= form_with(url: chat_path, method: :get, local: true) do |form| %>
+  <%= form.text_field :user_input, placeholder: "Say something..." %>
+  <%= form.submit "Send" %>
+<% end %>
+
+<% if @response_message.present? %>
+  <div class="response">
+    <p><strong>Response from GPT:</strong> <%= @response_message %></p>
+  </div>
+<% end %>

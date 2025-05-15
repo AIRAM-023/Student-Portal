@@ -1,0 +1,138 @@
+<!-- app/views/home/dashboard.html.erb -->
+
+<div class="container py-5">
+  <h2 class="mb-4 fw-bold text-primary">👋 Welcome back!</h2>
+
+  <!-- Learning Progress -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title text-success">📊 Learning Progress</h5>
+          <p class="card-text">You’ve completed <strong><%= @learning_progress[:percentage] %>%</strong> of your journey.</p>
+          <div class="progress" style="height: 20px;">
+            <div class="progress-bar bg-success" role="progressbar"
+              style="width: <%= @learning_progress[:percentage] %>%;" aria-valuenow="<%= @learning_progress[:percentage] %>"
+              aria-valuemin="0" aria-valuemax="100">
+              <%= @learning_progress[:percentage] %>%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Upcoming Tasks -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title text-warning">📅 Upcoming Tasks</h5>
+          <% if @upcoming_tasks.any? %>
+            <ul class="list-group list-group-flush">
+              <% @upcoming_tasks.each do |task| %>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                  <div class="ms-2 me-auto">
+                    <div class="fw-bold"><%= task[:title] %></div>
+                    <small class="text-muted"><%= task[:description] %></small>
+                  </div>
+                  <span class="badge bg-warning text-dark rounded-pill"><%= task[:due_date] %></span>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="text-muted">No upcoming tasks.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Recommendations -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title text-info">🤖 AI Recommendations</h5>
+          <% if @recommendations.any? %>
+            <% @recommendations.each do |rec| %>
+              <div class="alert alert-info" role="alert">
+                <strong><%= rec[:title] %>:</strong> <%= rec[:description] %>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="text-muted">No recommendations at this time.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+  <h3>Ask LearnCraft AI Assistant</h3>
+  <textarea id="ai-input" class="form-control mb-2" rows="3" placeholder="Ask anything..."></textarea>
+  <button class="btn btn-primary" onclick="askAI()">Send</button>
+
+  <div id="ai-response" class="mt-4 border p-3 bg-light" style="display: none;"></div>
+</div>
+
+<script>
+  function askAI() {
+    const input = document.getElementById('ai-input').value;
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const askButton = document.createElement("button");
+    askButton.textContent = "Ask LearnCraft AI Assistant";
+    askButton.className = "btn btn-primary mt-4";
+    document.body.appendChild(askButton);
+
+    askButton.addEventListener("click", () => {
+      const userPrompt = prompt("What do you want to learn?");
+      if (!userPrompt) return;
+
+      fetch("/ask_ai", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-Token": document.querySelector('meta[name="csrf-token"]').content
+        },
+        body: JSON.stringify({ prompt: userPrompt })
+      })
+        .then(response => response.json())
+        .then(data => {
+          alert("AI Says: " + data.response);
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          alert("AI Error: " + error);
+        });
+    });
+  });
+</script>
+
+
+  <!-- Recent Activities -->
+  <div class="row mb-4">
+    <div class="col-md-12">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h5 class="card-title text-secondary">🕒 Recent Activities</h5>
+          <% if @recent_activities.any? %>
+            <ul class="list-group list-group-flush">
+              <% @recent_activities.each do |activity| %>
+                <li class="list-group-item">
+                  <strong><%= activity[:title] %></strong>
+                  <span class="text-muted float-end"><%= activity[:date] %></span>
+                  <div><small><%= activity[:details] %></small></div>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p class="text-muted">No recent activities yet.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

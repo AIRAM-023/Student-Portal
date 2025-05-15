@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3f37c9;
+      --accent: #4cc9f0;
+      --light: #f8f9fa;
+      --dark: #212529;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: white !important;
+    }
+    
+    .navbar-brand span {
+      color: var(--accent);
+    }
+    
+    .nav-link {
+      color: rgba(255, 255, 255, 0.9) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: all 0.3s;
+    }
+    
+    .nav-link:hover {
+      color: white !important;
+      transform: translateY(-2px);
+    }
+    
+    .nav-link.active {
+      color: white !important;
+      border-bottom: 2px solid var(--accent);
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+      border-color: var(--accent);
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary:hover {
+      background-color: #3ab7dc;
+      border-color: #3ab7dc;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero-section {
+      background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(76, 201, 240, 0.1));
+      padding: 5rem 0;
+      margin-bottom: 3rem;
+      border-radius: 0 0 50% 50% / 20px;
+    }
+    
+    .hero-img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: all 0.5s;
+    }
+    
+    .hero-img:hover {
+      transform: perspective(1000px) rotateY(0deg);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .section-title {
+      position: relative;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .feature-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s;
+      height: 100%;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    
+    .team-member {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      transition: all 0.3s;
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+    }
+    
+    .team-img {
+      width: 100%;
+      height: auto;
+      transition: all 0.5s;
+    }
+    
+    .team-member:hover .team-img {
+      transform: scale(1.05);
+    }
+    
+    .team-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+      color: white;
+      transition: all 0.3s;
+    }
+    
+    .team-member:hover .team-info {
+      padding-bottom: 2rem;
+    }
+    
+    .team-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    
+    .team-social a {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: white;
+      color: var(--primary);
+      transition: all 0.3s;
+    }
+    
+    .team-social a:hover {
+      background: var(--accent);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .stats-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 0;
+      margin: 3rem 0;
+      border-radius: 20px;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+    
+    .stat-text {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    
+    .footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 0 1rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-logo span {
+      color: var(--accent);
+    }
+    
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+      padding-left: 5px;
+    }
+    
+    .footer-social a {
+      color: white;
+      margin-right: 15px;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    
+    .footer-social a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .btn-scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .btn-scroll-top:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    /* Animation classes */
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    
+    .slide-in-left {
+      animation: slideInLeft 1s ease-in-out;
+    }
+    
+    .slide-in-right {
+      animation: slideInRight 1s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes slideInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .hero-section {
+        padding: 3rem 0;
+      }
+      
+      .hero-img {
+        margin-top: 2rem;
+      }
+    }
+    
+    @media (max-width: 767px) {
+      .hero-section {
+        padding: 2rem 0;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <%= render 'layouts/navbar' %>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 slide-in-left">
+          <h1 class="display-4 fw-bold mb-4">Transforming Education Through AI</h1>
+          <p class="lead mb-4">LearnCraft AI is revolutionizing the way students learn with personalized AI tools designed to enhance your study experience.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="btn btn-primary">Try For Free</a>
+            <a href="#" class="btn btn-outline-secondary">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 slide-in-right">
+          <%= image_tag 'LCR.png', alt: 'LearnCraft AI Platform', class: 'hero-img' %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-4 mb-lg-0 fade-in">
+          <h2 class="section-title">About LearnCraft AI</h2>
+          <p class="lead mb-4">LearnCraft AI is a cutting-edge platform designed to enhance your learning experience using Artificial Intelligence.</p>
+          <p class="mb-4">We aim to provide personalized learning tools like summarization, quiz generation, and study plans to help you study more efficiently. Our platform adapts to your unique learning style and helps you master any subject with ease.</p>
+          <p>Founded in 2023 by a team of education and AI experts, LearnCraft AI has quickly become the go-to platform for students and educators looking to enhance their learning experience.</p>
+        </div>
+        <div class="col-lg-6 fade-in">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body p-4">
+              <h3 class="mb-4">Our Mission</h3>
+              <p class="mb-4">Our mission is to make learning smarter, faster, and more personalized. With LearnCraft AI, you'll have access to tools that adapt to your learning style, providing you with the best study strategies.</p>
+              <h3 class="mb-4">Our Vision</h3>
+              <p class="mb-4">We envision a world where education is accessible, engaging, and personalized for every student, regardless of their background or learning style.</p>
+              <h3 class="mb-4">Our Values</h3>
+              <div class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-check-circle text-primary"></i>
+                </div>
+                <div>
+                  <strong>Innovation</strong>: We continuously push the boundaries of what's possible in AI-enhanced learning.
+                </div>
+              </div>
+              <div class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-check-circle text-primary"></i>
+                </div>
+                <div>
+                  <strong>Accessibility</strong>: We believe quality education should be accessible to everyone.
+                </div>
+              </div>
+              <div class="d-flex">
+                <div class="me-3">
+                  <i class="fas fa-check-circle text-primary"></i>
+                </div>
+                <div>
+                  <strong>Personalization</strong>: We recognize that every learner is unique and deserves a tailored experience.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5 fade-in">
+        <h2 class="section-title mx-auto">Our Features</h2>
+        <p class="lead">Discover the powerful AI tools that make LearnCraft the ultimate learning companion</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4 class="card-title mb-3">AI Summarization</h4>
+              <p class="card-text">Convert lengthy content into concise, easy-to-understand summaries, saving you valuable study time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-question-circle"></i>
+              </div>
+              <h4 class="card-title mb-3">Smart Quiz Generation</h4>
+              <p class="card-text">Generate customized quizzes based on your study material to test your knowledge and reinforce learning.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h4 class="card-title mb-3">Personalized Study Plans</h4>
+              <p class="card-text">Get AI-generated study schedules tailored to your learning style, goals, and available time.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h4 class="card-title mb-3">Progress Tracking</h4>
+              <p class="card-text">Monitor your learning progress with detailed analytics and insights to optimize your study habits.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-comment-dots"></i>
+              </div>
+              <h4 class="card-title mb-3">AI Tutor</h4>
+              <p class="card-text">Get instant answers to your questions and explanations for complex concepts from our AI tutor.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fade-in">
+          <div class="feature-card card p-4">
+            <div class="card-body text-center">
+              <div class="feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h4 class="card-title mb-3">Collaborative Learning</h4>
+              <p class="card-text">Connect with peers, share resources, and engage in group study sessions to enhance your learning experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-number">50K+</div>
+            <div class="stat-text">Active Users</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-number">200+</div>
+            <div class="stat-text">Universities</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-number">1M+</div>
+            <div class="stat-text">Questions Answered</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-text">Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- CTA Section -->
+  <section class="cta-section py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center fade-in">
+          <h2 class="section-title mx-auto">Ready to Transform Your Learning Experience?</h2>
+          <p class="lead mb-4">Join thousands of students who have already enhanced their learning journey with LearnCraft AI.</p>
+          <a href="#" class="btn btn-primary btn-lg">Start Your Free Trial</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <%= render 'layouts/footer' %>
+
+  <!-- Scroll to Top Button -->
+  <a href="#" class="btn-scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Scroll to top button
+      const scrollTopBtn = document.getElementById('scrollTop');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.add('show');
+        } else {
+          scrollTopBtn.classList.remove('show');
+        }
+      });
+      
+      scrollTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Animation on scroll
+      const animateElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      
+      animateElements.forEach(element => {
+        element.style.opacity = '0';
+        observer.observe(element);
+      });
+    });
+  </script>
+</body>
+</html>

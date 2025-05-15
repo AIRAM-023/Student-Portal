@@ -1,0 +1,6 @@
+<%= form_with url: upload_document_path, local: true, multipart: true do |form| %>
+    <%= form.label :document, "Upload Document" %>
+    <%= form.file_field :document %>
+    <%= form.submit "Upload and Summarize" %>
+  <% end %>
+  
