@@ -9,6 +9,7 @@ LearnCraft  🎓 + AI Integration 🤖
 - AI-generated summaries for uploaded study materials
 - Smart dashboard with learning insights
 - Clean, responsive UI using HTML/CSS
+- The admin dashboard functionality is partially implemented
 - Backend logic using **Ruby on Rails**
 - Database integration for storing student, course, and AI content
 
