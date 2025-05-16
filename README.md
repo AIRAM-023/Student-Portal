@@ -8,7 +8,6 @@ LearnCraft  🎓 + AI Integration 🤖
 - Course enrollment module
 - Admin dashboard for managing students and courses
 - AI-generated summaries for uploaded study materials
-- AI-powered quiz generator based on user content
 - Smart dashboard with learning insights
 - Clean, responsive UI using HTML/CSS
 - Backend logic using **Ruby on Rails**
