@@ -6,7 +6,6 @@ LearnCraft  🎓 + AI Integration 🤖
 - User authentication system (login/logout)
 - Student registration and profile management
 - Course enrollment module
-- Admin dashboard for managing students and courses
 - AI-generated summaries for uploaded study materials
 - Smart dashboard with learning insights
 - Clean, responsive UI using HTML/CSS
